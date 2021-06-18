@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.InvoiceServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-18T05:03:37" hostname="DELL" time="0.004">
+<testsuite name="com.bridgelabz.InvoiceServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-18T06:09:01" hostname="DELL" time="0.005">
   <properties/>
-  <testcase name="given_LessDistance_AndTime_Should_Return_Minimum_Fare" classname="com.bridgelabz.InvoiceServiceTest" time="0.004"/>
+  <testcase name="given_Multiple_Rides_Should_Return_Total_Fare" classname="com.bridgelabz.InvoiceServiceTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
