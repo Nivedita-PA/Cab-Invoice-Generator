@@ -1,7 +1,8 @@
 package com.bridgelabz;
 
-public class Ride {
+import java.util.ArrayList;
 
+public class Ride {
     public final double distance;
     public final int time;
 
@@ -9,4 +10,5 @@ public class Ride {
      this.distance = distance;
      this.time = time;
     }
+
 }

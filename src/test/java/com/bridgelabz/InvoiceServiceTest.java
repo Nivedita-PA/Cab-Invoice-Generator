@@ -4,8 +4,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class InvoiceServiceTest {
     InvoiceGenerator invoiceGenerator = null;
+    ArrayList<Ride> rides = new ArrayList<>();
+    Map<Integer,ArrayList<Ride>> userRides = new HashMap<>();
 
     @Before
     public void setup() throws Exception {
@@ -33,12 +39,21 @@ public class InvoiceServiceTest {
     @Test
     public void given_Multiple_Rides_Should_ReturnInvoiceSummary() {
       InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-      Ride[] rides = {new Ride(2.0,5),
-                      new Ride(0.1,1)};
+       rides.add(new Ride(5,2));
+       rides.add(new Ride(4,7));
       InvoiceSummary invoicesummary = invoiceGenerator.calculateFare(rides);
-      InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2,30.0);
+      InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2,99);
       Assert.assertEquals(expectedInvoiceSummary,invoicesummary);
     }
 
-
+    @Test
+    public void given_Multiple_Rides_By_UserID_Should_ReturnInvoiceSummary() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        rides.add(new Ride(5,2));
+        rides.add(new Ride(4,7));
+        userRides.put(022,rides);
+        InvoiceSummary invoicesummary = invoiceGenerator.calculateFare(userRides);
+        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2,99);
+        Assert.assertEquals(expectedInvoiceSummary,invoicesummary);
+    }
 }

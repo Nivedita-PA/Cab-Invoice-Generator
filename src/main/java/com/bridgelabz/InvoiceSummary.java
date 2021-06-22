@@ -1,7 +1,5 @@
 package com.bridgelabz;
 
-import java.util.Objects;
-
 public class InvoiceSummary {
     public final int totalRides;
     public final double totalFare;
@@ -21,4 +19,12 @@ public class InvoiceSummary {
         return totalRides == that.totalRides && Double.compare(that.totalFare, totalFare) == 0 && Double.compare(that.avgFare, avgFare) == 0;
     }
 
+    @Override
+    public String toString() {
+        return "InvoiceSummary{" +
+                "totalRides=" + totalRides +
+                ", totalFare=" + totalFare +
+                ", avgFare=" + avgFare +
+                '}';
+    }
 }
